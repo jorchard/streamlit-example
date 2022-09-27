@@ -22,8 +22,6 @@ with st.echo(code_location='below'):
 
     Point = namedtuple('Point', 'x y')
     data = []
-
-    print('Hi Jeff')
     
     points_per_turn = total_points / num_turns
 
@@ -31,7 +29,7 @@ with st.echo(code_location='below'):
         curr_turn, i = divmod(curr_point_num, points_per_turn)
         angle = (curr_turn + 1) * 2 * math.pi * i / points_per_turn
         radius = curr_point_num / total_points
-        x = radius * math.cos(angle)
+        x = radius * math.cos(angle/2.)
         y = radius * math.sin(angle)
         data.append(Point(x, y))
 
